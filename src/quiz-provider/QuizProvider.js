@@ -1,12 +1,15 @@
 
-import React, { useEffect, useState } from "react";
-import styled from "styled-components";
 import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { v4 as uuidv4 } from 'uuid';
+
 export const QuizMakerContext = React.createContext();
+
 export const QuizMakerProvider = (props) => {
   const [categories, setCategories] = useState([]);
   const [filter, setFilter] = useState({})
-  const [questions, setQuestions] = useState({})
+  const [questions, setQuestions] = useState({});
+  const [userAnswers, setUserAnswers] = useState({})
 
   useEffect(() => {
     getCategories((res) => {
@@ -14,18 +17,30 @@ export const QuizMakerProvider = (props) => {
     })
   }, []);
 
-  const handleGetQuestion = () => {
+  const handleGetQuestion = (callback) => {
     getQuestionList({
         amount: 5,
         ...filter,
         type: 'multiple'
     }, (res) => {
-        setQuestions(res?.results)
+        let dataSource = [];
+        if(res?.results) {
+            dataSource = res?.results.map(item => {
+                item.id = uuidv4();
+                let newArray = [...item?.incorrect_answers, item?.correct_answer].sort(function() {return 0.5 - Math.random()});
+                item.amswers = newArray;
+                return item
+            })
+        }
+        setQuestions(dataSource)
+        if(callback) {
+            callback();
+        }
     })
 }
 
   return(
-    <QuizMakerContext.Provider value={{categories, filter, setFilter, questions, handleGetQuestion}}>
+    <QuizMakerContext.Provider value={{categories, filter, setFilter, questions,setQuestions, handleGetQuestion, userAnswers, setUserAnswers}}>
        {props.children}
     </QuizMakerContext.Provider>
   )
