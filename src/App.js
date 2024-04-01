@@ -24,7 +24,7 @@ function App() {
   return (
     <div className="App">
       <QuizMakerProvider>
-        <RouterProvider router={router} to="/" />
+        <RouterProvider router={router} />
         {/* <QuizMaker /> */}
       </QuizMakerProvider>
    
