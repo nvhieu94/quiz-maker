@@ -1,7 +1,7 @@
-import React, { useContext, useMemo, useState } from "react";
+import React, { useContext, useMemo } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { QuizMakerContext } from "../quiz-provider/QuizProvider";
-import { useNavigate } from "react-router-dom";
 
 const QuizMakerPageWrapper = styled.div`
     display: flex;
