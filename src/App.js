@@ -3,10 +3,7 @@ import QuizMaker from "./pages/quiz-maker";
 import QuizResult from "./pages/quiz-result";
 import { QuizMakerProvider } from "./quiz-provider/QuizProvider";
 
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([
   {
