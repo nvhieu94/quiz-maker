@@ -103,12 +103,12 @@ const QuizMaker = () => {
 
     const renderAnswerItem = (answersList, idQuestion) => {
         return answersList?.map((item, idx) => {
-            return <AnswerItem className={answers?.[idQuestion] === item ? "selected" : "default"} onClick={() => {
+            return <AnswerItem className={answers?.[idQuestion] === item ? "selected" : "default"} dangerouslySetInnerHTML={{ __html: item }} onClick={() => {
                 setAnswers((prev) => ({
                     ...prev,
                     [idQuestion]: item
                 }))
-            }} key={idx}>{item}</AnswerItem>
+            }} key={idx}></AnswerItem>
         })
     }
 
@@ -149,7 +149,8 @@ const QuizMaker = () => {
                 {questions?.length > 0 && questions?.map((item, idx) => {
                     return (
                         <QuestionItem key={idx}>
-                            <Question>{item?.question}</Question>
+                            <Question dangerouslySetInnerHTML={{ __html: item?.question }} />
+                            
                             <AnswerWrapper>
                                 {renderAnswerItem(item?.amswers || [], item?.id)}
                             </AnswerWrapper>

@@ -88,7 +88,7 @@ const QuizResult = () => {
 
     const renderAnswerItem = (answersList, idQuestion, correctAnswer) => {
         return answersList?.map((item, idx) => {
-            return <AnswerItem className={renderClass(item, userAnswers?.[idQuestion], correctAnswer)} key={idx}>{item}</AnswerItem>
+            return <AnswerItem className={renderClass(item, userAnswers?.[idQuestion], correctAnswer)} key={idx} dangerouslySetInnerHTML={{ __html: item }}></AnswerItem>
         })
     }
 
@@ -113,7 +113,8 @@ const QuizResult = () => {
                 {questions?.length > 0 && questions?.map((item, idx) => {
                     return (
                         <QuestionItem key={idx}>
-                            <Question>{item?.question}</Question>
+                            
+                            <Question dangerouslySetInnerHTML={{ __html: item?.question }}/>
                             <AnswerWrapper>
                                 {renderAnswerItem(item?.amswers || [], item?.id, item?.correct_answer)}
                             </AnswerWrapper>
