@@ -6,6 +6,7 @@ import {QuizMakerProvider} from './quiz-provider/QuizProvider';
 import {
   createBrowserRouter,
   RouterProvider,
+  BrowserRouter
 } from "react-router-dom";
 
 const router = createBrowserRouter([
@@ -24,8 +25,9 @@ function App() {
   return (
     <div className="App">
       <QuizMakerProvider>
+        <BrowserRouter basename='/quiz-maker'>
         <RouterProvider router={router} />
-        {/* <QuizMaker /> */}
+        </BrowserRouter>
       </QuizMakerProvider>
    
     </div>
