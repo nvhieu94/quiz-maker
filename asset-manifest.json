@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/nvhieu94/quiz-maker/static/css/main.f855e6bc.css",
-    "main.js": "/nvhieu94/quiz-maker/static/js/main.d0f02f34.js",
-    "static/js/453.2caa0241.chunk.js": "/nvhieu94/quiz-maker/static/js/453.2caa0241.chunk.js",
-    "index.html": "/nvhieu94/quiz-maker/index.html",
-    "main.f855e6bc.css.map": "/nvhieu94/quiz-maker/static/css/main.f855e6bc.css.map",
-    "main.d0f02f34.js.map": "/nvhieu94/quiz-maker/static/js/main.d0f02f34.js.map",
-    "453.2caa0241.chunk.js.map": "/nvhieu94/quiz-maker/static/js/453.2caa0241.chunk.js.map"
+    "main.css": "/quiz-maker/static/css/main.f855e6bc.css",
+    "main.js": "/quiz-maker/static/js/main.e502038c.js",
+    "static/js/453.2caa0241.chunk.js": "/quiz-maker/static/js/453.2caa0241.chunk.js",
+    "index.html": "/quiz-maker/index.html",
+    "main.f855e6bc.css.map": "/quiz-maker/static/css/main.f855e6bc.css.map",
+    "main.e502038c.js.map": "/quiz-maker/static/js/main.e502038c.js.map",
+    "453.2caa0241.chunk.js.map": "/quiz-maker/static/js/453.2caa0241.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f855e6bc.css",
-    "static/js/main.d0f02f34.js"
+    "static/js/main.e502038c.js"
   ]
 }
