@@ -95,7 +95,7 @@ const QuizResult = () => {
     const handleNewQuestion = () => {
         setFilter({});
         setQuestions([]);
-        navigate("/");
+        navigate("/quiz-maker");
     }
 
     const countCorrectAnswer = useMemo(() => {
