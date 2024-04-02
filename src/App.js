@@ -6,7 +6,6 @@ import { QuizMakerProvider } from "./quiz-provider/QuizProvider";
 import {
   createBrowserRouter,
   RouterProvider,
-  BrowserRouter,
 } from "react-router-dom";
 
 const router = createBrowserRouter([
